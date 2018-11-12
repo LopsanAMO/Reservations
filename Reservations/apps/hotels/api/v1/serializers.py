@@ -12,7 +12,7 @@ class HotelSerializer(serializers.ModelSerializer):
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        fields = ('hotel', 'room_number', 'availability', 'price', 'description')
+        fields = ('id', 'hotel', 'room_number', 'availability', 'price', 'description')
         read_only_fields = ('availability',)
         dept = 1
 

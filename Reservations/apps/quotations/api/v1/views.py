@@ -1,7 +1,5 @@
 from rest_framework import viewsets, mixins
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from Reservations.apps.hotels.models import Hotel, Room
 from Reservations.apps.quotations.models import Reservations
 from Reservations.apps.users.permissions import IsUserOrReadOnly
 from Reservations.apps.quotations.api.v1.serializers import ReservationSerializer, CreateReservationSerializer
@@ -29,7 +27,6 @@ class ReservationViewSet(mixins.RetrieveModelMixin,
         return Response(ReservationSerializer(reservs, many=True).data)
 
     def put(self, request, *args, **kwargs):
-        #import pudb;pudb.set_trace()
         instance = Reservations.objects.get(id=kwargs['id'])
         reservations = Reservations.objects.filter(
             room=instance.room,

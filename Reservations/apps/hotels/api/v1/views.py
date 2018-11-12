@@ -1,5 +1,4 @@
 from rest_framework import viewsets, mixins
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from Reservations.apps.hotels.models import Hotel, Room
 from Reservations.apps.users.permissions import IsUserOrReadOnly

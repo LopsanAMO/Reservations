@@ -1,6 +1,4 @@
-import datetime
 from rest_framework import serializers
-from Reservations.apps.hotels.models import Room
 from Reservations.apps.quotations.models import Reservations
 from Reservations.apps.hotels.api.v1.serializers import RoomSerializer
 

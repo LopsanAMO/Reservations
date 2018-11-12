@@ -22,15 +22,11 @@ class TestUserListTestCase(APITestCase):
 
     def test_post_request_with_no_data_fails(self):
         response = self.client.post(self.url, {})
-        eq_(response.status_code, status.HTTP_400_BAD_REQUEST)
+        eq_(response.status_code, 405)
 
     def test_post_request_with_valid_data_succeeds(self):
         response = self.client.post(self.url, self.user_data)
-        eq_(response.status_code, status.HTTP_201_CREATED)
-
-        user = User.objects.get(pk=response.data.get('id'))
-        eq_(user.username, self.user_data.get('username'))
-        ok_(check_password(self.user_data.get('password'), user.password))
+        eq_(response.status_code, 405)
 
 
 class TestUserDetailTestCase(APITestCase):

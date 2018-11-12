@@ -79,7 +79,7 @@ class Common(Configuration):
 
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
-    STATIC_ROOT = os.path.join(ROOT_DIR, 'static').replace('\\', '/')#
+    #STATIC_ROOT = os.path.join(ROOT_DIR, 'static').replace('\\', '/')
     STATICFILES_DIRS = (
         os.path.join(ROOT_DIR, 'static'),
     )
